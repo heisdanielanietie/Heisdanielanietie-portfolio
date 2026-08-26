@@ -331,6 +331,65 @@
 
     .service p { color: var(--muted); font-size: .9rem; }
 
+    /* Why Choose Me */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .why-card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: var(--radius);
+      transition: .25s ease;
+    }
+
+    .why-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(25,211,174,.4);
+    }
+
+    .why-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: rgba(25,211,174,.12);
+      color: var(--accent-2);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+
+    .why-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+      margin-bottom: 9px;
+      font-size: 1.05rem;
+    }
+
+    .why-card p { color: var(--muted); font-size: .9rem; }
+
+    .why-closing {
+      margin-top: 34px;
+      padding: 26px 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(120deg, rgba(124,92,255,.1), rgba(25,211,174,.06));
+      text-align: center;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.15rem;
+    }
+
+    @media (max-width: 850px) {
+      .why-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+
     /* Portfolio */
     .portfolio {
       display: grid;
@@ -717,6 +776,7 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
+        <a href="#why-choose-me">Why Me</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#webdev">Web Projects</a>
         <a href="#request">Start a Project</a>
@@ -894,12 +954,71 @@ I believe great design goes beyond making something look good—it is about unde
       </div>
     </section>
 
+    <!-- WHY CHOOSE ME -->
+    <section id="why-choose-me">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">03 — Why Choose Me</div>
+            <h2>Why work<br>with me.</h2>
+          </div>
+          <p>
+            I combine creative design, modern web development, and attention to
+            detail to turn ideas into digital experiences that look great and
+            work effectively.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Creative & Original</h3>
+            <p>I create designs that are visually engaging, purposeful, and tailored to each project.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Design + Development</h3>
+            <p>From graphics and UI/UX to responsive websites, I can bring an idea from concept to a finished digital product.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Attention to Detail</h3>
+            <p>I care about the small details that make a design feel polished, professional, and complete.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Modern Skills</h3>
+            <p>I work with tools and technologies including JavaScript, Next.js, Python, GitHub, and Netlify, alongside my creative design skills.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Client-Focused</h3>
+            <p>I listen to your ideas, understand your goals, and work toward delivering something that represents your vision.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-icon">✓</div>
+            <h3>Always Improving</h3>
+            <p>I continuously learn, experiment, and explore new creative and development techniques to deliver better work.</p>
+          </div>
+        </div>
+
+        <div class="why-closing">
+          Your idea deserves more than just a design — it deserves a creative solution.
+        </div>
+      </div>
+    </section>
+
     <!-- DESIGN GALLERY -->
     <section id="portfolio">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">03 — Some Designs I've Done</div>
+            <div class="section-kicker">04 — Some Designs I've Done</div>
             <h2>Selected<br>Creative Work.</h2>
           </div>
           <p>
@@ -957,7 +1076,7 @@ I believe great design goes beyond making something look good—it is about unde
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">04 — Web Development Projects</div>
+            <div class="section-kicker">05 — Web Development Projects</div>
             <h2>Websites<br>I've built.</h2>
           </div>
           <p>
@@ -1012,7 +1131,7 @@ I believe great design goes beyond making something look good—it is about unde
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">05 — Start A Project</div>
+            <div class="section-kicker">06 — Start A Project</div>
             <h2>Tell me about<br>your project.</h2>
           </div>
           <p>
@@ -1025,10 +1144,13 @@ I believe great design goes beyond making something look good—it is about unde
           class="request-form"
           name="project-request"
           method="POST"
+          action="/success.html"
           data-netlify="true"
+          data-netlify-honeypot="company"
           netlify-honeypot="company"
         >
           <input type="hidden" name="form-name" value="project-request" />
+          <input type="hidden" name="subject" value="New project request from portfolio website" />
 
           <div class="honeypot-field">
             <label>Company
@@ -1086,7 +1208,7 @@ I believe great design goes beyond making something look good—it is about unde
       <div class="container">
         <div class="contact-box">
           <div>
-            <div class="section-kicker">06 — Get In Touch</div>
+            <div class="section-kicker">07 — Get In Touch</div>
             <h2>Have an idea?<br>Let's make it visual.</h2>
             <p>
               Whether you need a logo, social media design, marketing material or a
